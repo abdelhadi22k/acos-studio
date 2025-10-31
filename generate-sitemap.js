@@ -2,11 +2,10 @@
 import { SitemapStream, streamToPromise } from "sitemap";
 import { createWriteStream } from "fs";
 
-const SITE_URL = "https://yourdomain.com"; // 🔹 غيّر هذا إلى دومين موقعك
+const SITE_URL = "https://acos-studio.vercel.app"; // ✅ غيره إلى دومينك النهائي عند الإطلاق
 
-// 🗺️ الأقسام الرئيسية داخل الصفحة الواحدة (SPA)
-const sections = [
-  "/", // الصفحة الرئيسية
+const pages = [
+  "/",             // الصفحة الرئيسية
   "/#home",
   "/#about",
   "/#services",
@@ -15,16 +14,16 @@ const sections = [
   "/#testimonials",
   "/#blog",
   "/#contact",
-  "/blog",        // صفحة المدونة الرئيسية
-  "/search"       // صفحة البحث
+  "/blog",         // صفحة المدونة
+  "/search"        // صفحة البحث
 ];
 
 const sitemap = new SitemapStream({ hostname: SITE_URL });
 const writeStream = createWriteStream("./dist/sitemap.xml");
 
 (async () => {
-  for (const section of sections) {
-    sitemap.write({ url: section, changefreq: "weekly", priority: 0.8 });
+  for (const page of pages) {
+    sitemap.write({ url: page, changefreq: "weekly", priority: 0.8 });
   }
 
   sitemap.end();
