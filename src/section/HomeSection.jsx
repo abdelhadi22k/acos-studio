@@ -62,7 +62,7 @@ const HomeSection = () => {
              Who are we? , a creative team specializing <br />
              in SEO, Web Design, UI/UX, and Business Automation.
             </p>
-            <img alt="" src="sources/website img/home page img 1.png" />
+            <img alt="homePageImg" loading="lazy" src="sources/website img/home page img 1.webp" />
           </div>
 
           <div className="mainText">
@@ -79,7 +79,7 @@ const HomeSection = () => {
           </div>
 
           <div className="imgText">
-            <img alt="" src="sources/website img/home page img 2.png" />
+            <img alt="homePageImg" loading="lazy" src="sources/website img/home page img 2.webp" />
             <p className="paragraphB1">
                We're here to make your digital growth <br />
                happen through strategy, creativity, and technology.

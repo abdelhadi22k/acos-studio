@@ -33,7 +33,7 @@ const BlogDetels = () => {
   ) : (
     <div className="BlogDetels">
       <Container className="Blog_Container">
-        <Image className="blogImg" src={blog.image} alt={blog.title} fluid />
+        <Image loading="lazy" className="blogImg" src={blog.image} alt={blog.title} fluid />
 
         <div>
           <div className="blogInfos">

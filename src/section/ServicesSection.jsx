@@ -52,7 +52,7 @@ const ServicesSection = () => {
               <span>Responsive design</span>
             </div>
             <div className="servicesBoxBtn">
-              <a className="mainButton2">start a web design project</a>
+              <a href="#contact" className="mainButton2">start a web design project</a> 
             </div>
           </div>
           <div className="servicesBox">
@@ -80,7 +80,7 @@ const ServicesSection = () => {
               <span>Usability Testing</span>
             </div>
             <div className="servicesBoxBtn">
-              <a className="mainButton2">start a uiux design project</a>
+              <a href="#contact" className="mainButton2">start a uiux design project</a>
             </div>
           </div>
           <div className="servicesBox">
@@ -109,7 +109,7 @@ const ServicesSection = () => {
               <span>Ai</span>
             </div>
             <div className="servicesBoxBtn">
-              <a className="mainButton2">start a automation project</a>
+              <a href="#contact" className="mainButton2">start a automation project</a>
             </div>
           </div>
         </div>

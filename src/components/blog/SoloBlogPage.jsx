@@ -16,6 +16,7 @@ const SoloBlogPage = ({ blog }) => {
                                             src={Blog.image}
                                             alt={Blog.title}
                                             fluid
+                                            loading="lazy"
                                         />
                                     </Link>
                                     <h5 className="">{Blog.title}</h5>

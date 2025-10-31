@@ -9,6 +9,7 @@ const SoloBlog = ({ blog }) => {
           <div key={index} className="blog_card">
             <div className="blog_image_wrapper">
               <Image
+              loading="lazy"
                 className="blog_image"
                 src={Blog.image}
                 alt={Blog.title}

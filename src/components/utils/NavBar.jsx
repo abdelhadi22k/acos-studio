@@ -59,7 +59,7 @@ function NavBar() {
             offset={-100}
             onClick={() => handleLinkClick("home")}
           >
-            <img alt="logoBrand" src="sources/website icon/brand logo.svg" />
+            <img alt="logoBrand" src="sources/website icon/main logo.svg" />
             <div></div>
           </ScrollLink>
         </Navbar.Brand>

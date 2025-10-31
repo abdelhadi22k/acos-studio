@@ -66,8 +66,9 @@ const AboutUsSection = () => {
         <div className="aboutImg">
           <Image
             className="projectImg"
-            src="sources/website img/about Img.webp"
+            src="sources/website img/aboutUs.webp"
             alt="about Img"
+            loading="lazy"
             fluid
           />
         </div>

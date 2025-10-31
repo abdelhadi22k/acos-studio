@@ -51,7 +51,7 @@ const Footer = () => {
                   <img
                     className="footerImg"
                     alt="logoBrand"
-                    src="sources/website icon/brand logo.svg"
+                    src="sources/website icon/full logo.svg"
                   />
                   <p className="mb-5">
                    Acos Studio is a team specializing in digital project development, 
