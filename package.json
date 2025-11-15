@@ -8,8 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-  "sitemap": "node generate-sitemap.js",
-  "vercel-build": "vite build && node generate-sitemap.js"
+    "sitemap": "node generate-sitemap.js",
+    "vercel-build": "vite build && node generate-sitemap.js"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -21,6 +21,7 @@
     "axios": "^1.12.2",
     "bootstrap": "^5.3.8",
     "framer-motion": "^12.23.24",
+    "lucide-react": "^0.553.0",
     "react": "^19.1.1",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.1",
@@ -44,6 +45,4 @@
     "sitemap": "^8.0.2",
     "vite": "^7.1.7"
   }
-
-
 }
