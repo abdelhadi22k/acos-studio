@@ -1,6 +1,7 @@
 // HomeSection.jsx
 import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
+import { motion } from "framer-motion";
 
 const HomeSection = () => {
   // إعدادات الـ typewriter
@@ -10,7 +11,7 @@ const HomeSection = () => {
   const deleteSpeed = 100;
   const delay = 5000;
   const cursor = true;
-  const cursorChar = "|";
+  const cursorChar = "";
   const gradientWords = ["acos"];
 
   const [wordIndex, setWordIndex] = useState(0);
@@ -49,48 +50,203 @@ const HomeSection = () => {
     }
 
     return () => clearTimeout(timer);
-  }, [text, isDeleting, wordIndex]); // لا تضف الـ setters هنا
+  }, [text, isDeleting, wordIndex]);
 
   const needsGradient = gradientWords.includes(words[wordIndex]);
+
+  // Variants للأنيميشن
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
+  const fadeUpVariant = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const imageVariantLeft = {
+    hidden: { opacity: 0, x: -60, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        duration: 0.9,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const imageVariantRight = {
+    hidden: { opacity: 0, x: 60, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        duration: 0.9,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const buttonVariant = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        delay: 0.4,
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+    hover: {
+      y: -3,
+      scale: 1.03,
+      boxShadow: "0 18px 45px rgba(0,0,0,0.25)",
+      transition: {
+        duration: 0.25,
+        ease: "easeOut",
+      },
+    },
+    tap: {
+      scale: 0.97,
+      y: 0,
+      boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+    },
+  };
+
+  const typewriterWrapperVariant = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
     <section className="homePage" id="home">
       <Container>
-        <div className="mainTextContainer">
-          <div className="imgText">
-            <p className="paragraphB1">
-             Who are we? , a creative team specializing <br />
-             in SEO, Web Design, UI/UX, and Business Automation.
-            </p>
-            <img alt="homePageImg" loading="lazy" src="sources/website img/home page img 1.webp" />
-          </div>
+        <motion.div
+          className="mainTextContainer"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* الكتلة اليسار: النص + الصورة */}
+          <motion.div className="imgText" variants={fadeUpVariant}>
+            <motion.p
+              className="paragraphB1"
+              variants={fadeUpVariant}
+              transition={{ delay: 0.1 }}
+            >
+              Who are we? , a creative team specializing <br />
+              in SEO, Web Design, UI/UX, and Business Automation.
+            </motion.p>
 
-          <div className="mainText">
-            <h1 className="heroTitle">
-              <h1 className="typewriter-wrapper" aria-live="polite">
+            <motion.img
+              variants={imageVariantRight}
+              alt="homePageImg"
+              loading="lazy"
+              src="sources/website img/home page img 1.webp"
+              whileHover={{ scale: 1.03, rotate: 1 }}
+              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            />
+          </motion.div>
+
+          {/* النص الرئيسي مع تأثير التايب رايتر */}
+          <motion.div className="mainText" variants={fadeUpVariant}>
+            <motion.h1
+              className="heroTitle"
+              variants={fadeUpVariant}
+              transition={{ delay: 0.2 }}
+            >
+              <motion.h1
+                className="typewriter-wrapper"
+                aria-live="polite"
+                variants={typewriterWrapperVariant}
+              >
                 {needsGradient ? (
                   <span className="gradient-text">{text}</span>
                 ) : (
                   <span>{text}</span>
                 )}
-                {cursor && <span className="tw-cursor">{cursorChar}</span>}
-              </h1>
-            </h1>
-          </div>
 
-          <div className="imgText">
-            <img alt="homePageImg" loading="lazy" src="sources/website img/home page img 2.webp" />
-            <p className="paragraphB1">
-               We're here to make your digital growth <br />
-               happen through strategy, creativity, and technology.
-            </p>
-          </div>
-        </div>
-        <div className='ButtonHolder'>
+                {cursor && (
+                  <motion.span
+                    className="tw-cursor"
+                    animate={{ opacity: [0, 1, 0] }}
+                    transition={{
+                      duration: 0.9,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    {cursorChar}
+                  </motion.span>
+                )}
+              </motion.h1>
+            </motion.h1>
+          </motion.div>
 
-        <a  href="#contact" className='mainButton1'>Start your project now</a>
+          {/* الكتلة اليمين: الصورة + النص */}
+          <motion.div className="imgText" variants={fadeUpVariant}>
+            <motion.img
+              variants={imageVariantLeft}
+              alt="homePageImg"
+              loading="lazy"
+              src="sources/website img/home page img 2.webp"
+              whileHover={{ scale: 1.03, rotate: -1 }}
+              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            />
+            <motion.p
+              className="paragraphB1"
+              variants={fadeUpVariant}
+              transition={{ delay: 0.1 }}
+            >
+              We're here to make your digital growth <br />
+              happen through strategy, creativity, and technology.
+            </motion.p>
+          </motion.div>
+        </motion.div>
 
-        </div>
+        {/* الزر الرئيسي */}
+        <motion.div
+          className="ButtonHolder"
+          variants={buttonVariant}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.a
+            href="#contact"
+            className="mainButton1"
+            variants={buttonVariant}
+            whileHover="hover"
+            whileTap="tap"
+          >
+            Start your project now
+          </motion.a>
+        </motion.div>
+
       </Container>
     </section>
   );

@@ -1,3 +1,4 @@
+// MainPage.jsx
 import NavBar from "../components/utils/NavBar";
 import AboutUsSection from "../section/AboutUsSection";
 import BlogSection from "../section/BlogSection";
@@ -8,49 +9,30 @@ import ProjectsSection from "../section/ProjectsSection";
 import ServicesSection from "../section/ServicesSection";
 import TestimonialsSection from "../section/TestimonialsSection";
 import Footer from "../components/Footer";
-import Chatbot from "../components/Chatbot";
+// import Chatbot from "../components/Chatbot";
 
 const MainPage = () => {
   return (
-    <div>
+    <div className="mainPageWrapper">
       <NavBar />
 
-      <section id="home">
-        <HomeSection />
-      </section>
+      {/* كل سكشن أصلاً عنده id داخلي نفسه (home, about, services, ...) */}
+      <HomeSection />
+      <AboutUsSection />
+      <ServicesSection />
+      <ProjectsSection />
+      <ExperienceSection />
+      <TestimonialsSection />
+      <BlogSection />
+      <ContactSection />
 
-      <section id="about">
-        <AboutUsSection />
-      </section>
-
-      <section id="services">
-        <ServicesSection />
-      </section>
-
-      <section id="projects">
-        <ProjectsSection />
-      </section>
-
-      <section id="experience">
-        <ExperienceSection />
-      </section>
-
-      <section id="testimonials">
-        <TestimonialsSection />
-      </section>
-
-      <section id="blog">
-        <BlogSection />
-      </section>
-
-      <section id="contact">
-        <ContactSection />
-      </section>
 
       <Footer />
+
+      {/* فعّل الشات بوت لما تكون جاهز */}
+      {/* <Chatbot /> */}
     </div>
   );
 };
 
 export default MainPage;
-      // <Chatbot />
