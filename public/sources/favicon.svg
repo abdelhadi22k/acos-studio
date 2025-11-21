@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100"><svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="100" height="99.8765" rx="49.9383" fill="url(#paint0_linear_231_23)"></rect>
+<path d="M57.4666 28.2393L53.034 25.3521C51.6367 24.4419 49.7679 24.8381 48.86 26.2369L22.1069 67.4572C21.199 68.8561 21.5958 70.7279 22.9932 71.6381L27.4257 74.5252C28.8231 75.4354 30.6918 75.0393 31.5997 73.6404L58.3528 32.4201C59.2607 31.0213 58.8639 29.1495 57.4666 28.2393Z" fill="white"></path>
+<path d="M58.8076 45.9189C59.3653 45.0577 60.6258 45.0578 61.1836 45.9189L79.3379 73.9551C79.9475 74.8966 79.2719 76.1393 78.1504 76.1396H69.015C68.4071 76.1396 67.8406 75.8316 67.5102 75.3213L61.9247 66.6943C61.2182 65.6031 59.6216 65.6031 58.9151 66.6943L53.3297 75.3213C52.9993 75.8316 52.4328 76.1396 51.8249 76.1396H41.8457C40.7242 76.1393 40.0487 74.8966 40.6582 73.9551L58.8076 45.9189Z" fill="white"></path>
+<defs>
+<linearGradient id="SvgjsLinearGradient1001" x1="50" y1="0" x2="50" y2="99.8765" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CF0A0A"></stop>
+<stop offset="1" stop-color="#690505"></stop>
+</linearGradient>
+</defs>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>

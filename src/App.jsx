@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HeadProvider } from "react-head";
 import MainPage from "./page/MainPage";
-<<<<<<< HEAD
 import BlogDetels from "./components/blog/BlogDetels";
 import SearchPage from "./page/SearchPage";
 import BlogPage from "./page/BlogPage";
